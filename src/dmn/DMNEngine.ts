@@ -1,4 +1,4 @@
-import {DecisionTable, Condition, DMNParser}  from './DMNParser'
+import {DecisionTable, Condition, DMNParser}  from './DMNParser.js'
 import {   unaryTest, evaluate as feelEvaluate  } from 'feelin';
 
 class DMNEngine {
@@ -124,7 +124,7 @@ class DMNEngine {
 
         if (condition.operator==='feel'){
                 try {
-                    let ret=feelEvaluate(condition.value,inputValue); // Remove { } and parse FEEL
+                    let ret:any = feelEvaluate(condition.value, inputValue as any); // Remove { } and parse FEEL
                     console.log(`   RuleId: ${ruleId} FEEL `,condition.value,'input:',inputValue,'ret',ret);
                     return ret;
                 } catch (error) {

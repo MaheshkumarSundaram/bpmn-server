@@ -1,9 +1,9 @@
 
-import { Execution } from '../';
-import { ServerComponent } from '../server/ServerComponent';
-import { EXECUTION_EVENT, IEngine} from "../interfaces";
+import { Execution } from '../index.js';
+import { ServerComponent } from '../server/ServerComponent.js';
+import { EXECUTION_EVENT, IEngine} from "../interfaces/index.js";
 
-import { DataStore } from '../datastore';
+import { DataStore } from '../datastore/index.js';
 import { exec } from 'child_process';
 
 

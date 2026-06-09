@@ -1,16 +1,16 @@
 
-const BpmnModdle = require('bpmn-moddle');
+import { BpmnModdle } from 'bpmn-moddle';
 
-//import { moddleOptions} from './js-bpmn-moddle';
+//import { moddleOptions} from './js-bpmn-moddle.js';
 
 //const moddleOptions = require('./js-bpmn-moddle.json');
 
-import { Flow , MessageFlow ,NodeLoader , Process, Behaviour_names } from '.'; 
-import { BPMN_TYPE } from './NodeLoader';
-import { IDefinition } from '../interfaces/elements';
-import { BPMNServer } from '../server/BPMNServer';
-import { EXECUTION_EVENT } from '../interfaces';
-import { Transaction, SubProcess , AdHocSubProcess } from '.';
+import { Flow , MessageFlow ,NodeLoader , Process, Behaviour_names } from './index.js'; 
+import { BPMN_TYPE } from './NodeLoader.js';
+import { IDefinition } from '../interfaces/elements.js';
+import { BPMNServer } from '../server/BPMNServer.js';
+import { EXECUTION_EVENT } from '../interfaces/index.js';
+import { Transaction, SubProcess , AdHocSubProcess } from './index.js';
 
 //DEBUG(moddleOptions);
 function DEBUG(...args) {

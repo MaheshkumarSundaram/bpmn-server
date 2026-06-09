@@ -1,16 +1,16 @@
 
-import { Node } from './Node';
+import { Node } from './Node.js';
 
-import { Token, TOKEN_TYPE } from '../engine/Token';
-import { BPMN_TYPE, ITEM_STATUS, NODE_ACTION } from '../interfaces/Enums'
+import { Token, TOKEN_TYPE } from '../engine/Token.js';
+import { BPMN_TYPE, ITEM_STATUS, NODE_ACTION } from '../interfaces/Enums.js'
 
-import { Process } from './Process';
-import { IExecution } from '../interfaces/engine';
-import { EXECUTION_STATUS } from '../interfaces/Enums';
-import { Item } from '../engine/Item';
-import { IAppDelegate, IServiceProvider, ScriptHandler } from '../';
+import { Process } from './Process.js';
+import { IExecution } from '../interfaces/engine.js';
+import { EXECUTION_STATUS } from '../interfaces/Enums.js';
+import { Item } from '../engine/Item.js';
+import { IAppDelegate, IServiceProvider, ScriptHandler } from '../index.js';
 
-import { DMNEngine } from '../dmn/DMNEngine';
+import { DMNEngine } from '../dmn/DMNEngine.js';
 
 // ---------------------------------------------
 class ScriptTask extends Node {

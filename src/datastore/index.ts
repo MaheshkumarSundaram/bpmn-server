@@ -1,8 +1,8 @@
-export * from '../datastore/DataStore';
-export * from '../datastore/ModelsDatastore';
-export * from '../datastore/ModelsDatastoreDB';
-export * from '../datastore/ModelsData';
-export * from '../datastore/MongoDB';
-export * from '../datastore/InstanceLocker';
-export * from '../datastore/QueryTranslator';
+export * from '../datastore/DataStore.js';
+export * from '../datastore/ModelsDatastore.js';
+export * from '../datastore/ModelsDatastoreDB.js';
+export * from '../datastore/ModelsData.js';
+export * from '../datastore/MongoDB.js';
+export * from '../datastore/InstanceLocker.js';
+export * from '../datastore/QueryTranslator.js';
 

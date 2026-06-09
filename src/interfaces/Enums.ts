@@ -1,4 +1,4 @@
-import { Transaction } from "../elements";
+import { Transaction } from "../elements/index.js";
 
 enum BPMN_TYPE {
     UserTask = 'bpmn:UserTask',

@@ -1,4 +1,4 @@
-import { Behaviour } from '.';
+import { Behaviour } from './index.js';
 /*  'camunda:formData'
   <extensionElements>
 <camunda: formData >

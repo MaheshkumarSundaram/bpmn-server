@@ -1,4 +1,4 @@
 
-export * from './API';
-export * from './SecureUser';
+export * from './API.js';
+export * from './SecureUser.js';
 

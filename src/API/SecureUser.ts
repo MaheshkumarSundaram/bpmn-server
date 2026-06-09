@@ -1,5 +1,5 @@
-import { QueryTranslator } from "../datastore/QueryTranslator";
-import { ISecureUser, IUserInfo } from "../interfaces";
+import { QueryTranslator } from "../datastore/QueryTranslator.js";
+import { ISecureUser, IUserInfo } from "../interfaces/index.js";
 
 enum USER_ROLE {
     SYSTEM = 'SYSTEM',  // SYSTEM ADMIN

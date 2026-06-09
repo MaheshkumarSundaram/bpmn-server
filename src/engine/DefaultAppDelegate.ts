@@ -1,5 +1,5 @@
-import { IExecution, Item, IAppDelegate, IServiceProvider} from "../";
-import { moddleOptions} from '../elements/js-bpmn-moddle';
+import { IExecution, Item, IAppDelegate, IServiceProvider} from "../index.js";
+import { moddleOptions} from '../elements/js-bpmn-moddle.js';
 
 class DefaultAppDelegate implements IAppDelegate {
     server;

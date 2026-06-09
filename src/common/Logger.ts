@@ -1,6 +1,8 @@
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
 'use strict';
 
-import { ILogger } from "../";
+import { ILogger } from "../index.js";
 
 class Logger implements ILogger {
 

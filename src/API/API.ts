@@ -2,7 +2,7 @@
 import {
     IBPMNServer, IEngine, IDefinition, IConfiguration, IDataStore, EXECUTION_EVENT
     , IExecution, IInstanceData, IItemData, ISecureUser
-} from '../';
+} from '../index.js';
 
 /**
  *  root object to api

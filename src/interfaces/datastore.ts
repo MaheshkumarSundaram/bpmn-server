@@ -1,5 +1,5 @@
-import { IDefinition, IInstanceData } from './';
-import { IBpmnModelData, IItemData, IEventData } from './';
+import { IDefinition, IInstanceData } from './index.js';
+import { IBpmnModelData, IItemData, IEventData } from './index.js';
 
 export interface FindParams {
 	filter?: Record<string, any>;

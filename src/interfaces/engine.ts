@@ -1,6 +1,6 @@
-import { NODE_ACTION, TOKEN_STATUS } from './Enums';
-import { IItemData , IInstanceData } from './';
-import { ILogger, IAppDelegate, IBPMNServer, IDefinition, Token, Item, Element, Node, IServerComponent } from '../';
+import { NODE_ACTION, TOKEN_STATUS } from './Enums.js';
+import { IItemData , IInstanceData } from './index.js';
+import { ILogger, IAppDelegate, IBPMNServer, IDefinition, Token, Item, Element, Node, IServerComponent } from '../index.js';
 
 interface IScriptHandler {
     evaluateExpression(scope: IItem|IToken, expression);

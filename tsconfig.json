@@ -1,20 +1,23 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "es6",
-    "lib": [ "es6" , "es2021" ],
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "target": "ES2022",
+    "lib": ["ES2022"],
+    // Behaviour subclasses declare typed fields (e.g. `duration;`, `parameters: IOParameter[];`)
+    // while the base ctor populates them via init(). ES2022's default define-semantics would
+    // re-initialize those fields to undefined AFTER super() runs, clobbering init()'s values.
+    // The engine was authored against set-semantics, so keep them.
+    "useDefineForClassFields": false,
     "sourceMap": true,
-    "skipLibCheck": true,
     "declaration": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": false,
     "rootDir": "./src",
-    "outDir": "./dist" 
+    "outDir": "./dist"
   },
-  "include": [
-    "**/*.ts", "test/handler.js"
-  ],
-  "exclude": [
-    "node_modules",
-    "./dist",
-    "docusaurus.config.ts"
-  ]
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "dist", "src/arch-map.ts", "src/scripts"]
 }

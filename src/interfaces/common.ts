@@ -2,7 +2,7 @@ import {
     IExecution, IItem, NODE_ACTION, FLOW_ACTION, IModelsDatastore,
     IDataStore, ICacheManager,
     IScriptHandler
-} from '../';
+} from '../index.js';
 
 
 interface IConfiguration 

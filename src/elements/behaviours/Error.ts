@@ -1,9 +1,9 @@
-import type { TimerBehaviour } from ".";
-import type { Node } from "..";
-import { Behaviour } from '.';
-import type { Item } from "../../engine/Item";
-import { Event, NODE_SUBTYPE, Transaction } from "../../";
-import { BPMN_TYPE, NODE_ACTION, TOKEN_STATUS } from "../../interfaces";
+import type { TimerBehaviour } from "./index.js";
+import type { Node } from "../index.js";
+import { Behaviour } from './index.js';
+import type { Item } from "../../engine/Item.js";
+import { Event, NODE_SUBTYPE, Transaction } from "../../index.js";
+import { BPMN_TYPE, NODE_ACTION, TOKEN_STATUS } from "../../interfaces/index.js";
 
 
 class ErrorEventBehaviour extends Behaviour {

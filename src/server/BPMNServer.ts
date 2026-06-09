@@ -1,7 +1,12 @@
-import { Logger } from '../common/Logger';
-import { IConfiguration, ILogger, IAppDelegate, IBPMNServer, IDataStore, ICacheManager, IScriptHandler, IModelsDatastore } from '../';
-import { Engine } from './Engine';
-import { Cron } from './Cron';
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+const __dirname = dirname(fileURLToPath(import.meta.url));
+import { Logger } from '../common/Logger.js';
+import { IConfiguration, ILogger, IAppDelegate, IBPMNServer, IDataStore, ICacheManager, IScriptHandler, IModelsDatastore } from '../index.js';
+import { Engine } from './Engine.js';
+import { Cron } from './Cron.js';
 import { EventEmitter } from 'eventemitter3';
 
 /**
@@ -95,7 +100,7 @@ class BPMNServer implements IBPMNServer {
 			cache: this.cache.list,
 			engineRunning: this.engine.runningCounter,
 			engineCalls: this.engine.callsCounter,
-			memoryUsage: typeof __dirname === 'undefined' ? require('node:process').memoryUsage() : null,
+			memoryUsage: process.memoryUsage(),
 		};
 	}
 	static getVersion() {

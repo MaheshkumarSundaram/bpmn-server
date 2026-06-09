@@ -1,16 +1,17 @@
-import { DataHandler } from '../engine';
-import { Execution } from '../engine/Execution';
-import { IDataStore,FindParams,FindResult, IBPMNServer, IInstanceData, IItemData } from '../interfaces';
+import { MongoDB } from './MongoDB.js';
+import { DataHandler } from '../engine/index.js';
+import { Execution } from '../engine/Execution.js';
+import { IDataStore,FindParams,FindResult, IBPMNServer, IInstanceData, IItemData } from '../interfaces/index.js';
 
-import {  ObjectId, Document, WithId , ISODate } from 'mongodb';
+import { ObjectId, Document, WithId } from 'mongodb';
 
-import { ServerComponent } from '../server/ServerComponent';
+import { ServerComponent } from '../server/ServerComponent.js';
 
 
-import { InstanceLocker } from './';
+import { InstanceLocker } from './index.js';
 
-import { QueryTranslator } from './QueryTranslator';
-import { Aggregate} from './Aggregate'
+import { QueryTranslator } from './QueryTranslator.js';
+import { Aggregate} from './Aggregate.js'
 
  
 class DataStore extends ServerComponent  implements IDataStore {
@@ -40,7 +41,6 @@ class DataStore extends ServerComponent  implements IDataStore {
 			this.dbConfiguration.Archive_collection='wf_archive';
 
 
-		const MongoDB = require('./MongoDB').MongoDB;
 		this.db = new MongoDB(this.dbConfiguration, this.logger);
 		this.locker=new InstanceLocker(this);
 

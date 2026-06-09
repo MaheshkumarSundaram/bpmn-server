@@ -1,11 +1,11 @@
-import { TimerBehaviour, CamundaFormData, IOBehaviour, MessageEventBehaviour, SignalEventBehaviour, TerminateBehaviour, LoopBehaviour } from ".";
-import  type { Node } from "..";
-import type { Item } from "../../engine/Item";
-import { IItem } from "../../";
-import { ScriptBehaviour } from "./Script";
+import { TimerBehaviour, CamundaFormData, IOBehaviour, MessageEventBehaviour, SignalEventBehaviour, TerminateBehaviour, LoopBehaviour } from "./index.js";
+import  type { Node } from "../index.js";
+import type { Item } from "../../engine/Item.js";
+import { IItem } from "../../index.js";
+import { ScriptBehaviour } from "./Script.js";
 
 
-const duration = require('iso8601-duration');
+import * as duration from 'iso8601-duration';
 const parse = duration.parse;
 const end = duration.end;
 const toSeconds = duration.toSeconds;

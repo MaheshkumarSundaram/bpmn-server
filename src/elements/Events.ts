@@ -1,8 +1,8 @@
-import { Node } from ".";
-import { Behaviour_names } from "./behaviours";
-import { Loop, NODE_ACTION, TOKEN_TYPE } from "../";
-import { Item } from "../engine/Item";
-import { ITEM_STATUS, TOKEN_STATUS } from "../interfaces";
+import { Node } from "./index.js";
+import { Behaviour_names } from "./behaviours/index.js";
+import { Loop, NODE_ACTION, TOKEN_TYPE } from "../index.js";
+import { Item } from "../engine/Item.js";
+import { ITEM_STATUS, TOKEN_STATUS } from "../interfaces/index.js";
 
 class Event extends Node {
 

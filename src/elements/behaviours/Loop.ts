@@ -1,7 +1,7 @@
-import { TimerBehaviour } from ".";
-import { Node } from '..';
-import {Behaviour } from ".";
-import { Item } from "../../engine/Item";
+import { TimerBehaviour } from "./index.js";
+import { Node } from '../index.js';
+import {Behaviour } from "./index.js";
+import { Item } from "../../engine/Item.js";
 
 /**
  * 

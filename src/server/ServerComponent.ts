@@ -1,5 +1,5 @@
-import { Cron, CacheManager} from "./";
-import { IEngine, IBPMNServer } from "../interfaces";
+import { Cron, CacheManager} from "./index.js";
+import { IEngine, IBPMNServer } from "../interfaces/index.js";
 
 
 /**

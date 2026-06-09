@@ -1,5 +1,5 @@
 
-export * from './Logger';
-export * from './DefaultConfiguration';
-export * from './timer';
+export * from './Logger.js';
+export * from './DefaultConfiguration.js';
+export * from './timer.js';
 

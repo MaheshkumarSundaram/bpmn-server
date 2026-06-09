@@ -1,11 +1,11 @@
-import { Node  } from './';
-import { BPMN_TYPE } from '../interfaces/Enums';
+import { Node  } from './index.js';
+import { BPMN_TYPE } from '../interfaces/Enums.js';
 
 import {
     UserTask, ScriptTask, ServiceTask, SendTask, ReceiveTask, BusinessRuleTask,
     Gateway, EventBasedGateway, XORGateway , 
     Event, CatchEvent, ThrowEvent, EndEvent , SubProcess, AdHocSubProcess,BoundaryEvent, CallActivity, StartEvent
-} from '.';
+} from './index.js';
 
 
 class NodeLoader {
