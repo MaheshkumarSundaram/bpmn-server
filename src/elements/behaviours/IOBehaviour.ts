@@ -1,8 +1,8 @@
-import { TimerBehaviour } from ".";
-import { Node } from "..";
-import { Behaviour } from '.';
-import type { Item } from "../../engine/Item";
-import { ScriptHandler } from "../../engine/ScriptHandler";
+import { TimerBehaviour } from "./index.js";
+import { Node } from "../index.js";
+import { Behaviour } from './index.js';
+import type { Item } from "../../engine/Item.js";
+import { ScriptHandler } from "../../engine/ScriptHandler.js";
 
 /*
  * will prepare input at start

@@ -1,5 +1,5 @@
 import { EventEmitter } from "events";
-import { IExecution } from "../interfaces";
+import { IExecution } from "../interfaces/index.js";
 
 class Listener extends EventEmitter {
 

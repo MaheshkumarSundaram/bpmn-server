@@ -1,10 +1,10 @@
 
-import { Behaviour } from '.';
-import { Item } from "../../engine/Item";
-import { NODE_SUBTYPE } from "../../";
-import { ITEM_STATUS, NODE_ACTION, TOKEN_STATUS } from "../../interfaces";
-import { Node } from "../Node";
-import { Event, Transaction } from "../";
+import { Behaviour } from './index.js';
+import { Item } from "../../engine/Item.js";
+import { NODE_SUBTYPE } from "../../index.js";
+import { ITEM_STATUS, NODE_ACTION, TOKEN_STATUS } from "../../interfaces/index.js";
+import { Node } from "../Node.js";
+import { Event, Transaction } from "../index.js";
 
 class CancelEventBehaviour extends Behaviour {
     init() {

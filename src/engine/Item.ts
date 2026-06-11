@@ -1,8 +1,8 @@
-import { Execution } from "./Execution";
-import { ITEM_STATUS, IItem, } from "../";
-import { IItemData } from "../";
-import { Element , Node } from '../elements';
-import { Token } from "./Token";
+import { Execution } from "./Execution.js";
+import { ITEM_STATUS, IItem, } from "../index.js";
+import { IItemData } from "../index.js";
+import { Element , Node } from '../elements/index.js';
+import { Token } from "./Token.js";
 
 class Item implements IItem {
     id;                 

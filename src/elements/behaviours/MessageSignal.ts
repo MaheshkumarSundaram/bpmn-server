@@ -1,8 +1,8 @@
-import type { TimerBehaviour } from ".";
-import type { Node } from "..";
-import { Behaviour } from '.';
-import { Item } from "../../engine/Item";
-import { NODE_SUBTYPE } from "../../";
+import type { TimerBehaviour } from "./index.js";
+import type { Node } from "../index.js";
+import { Behaviour } from './index.js';
+import { Item } from "../../engine/Item.js";
+import { NODE_SUBTYPE } from "../../index.js";
 /**
  * 
  * 

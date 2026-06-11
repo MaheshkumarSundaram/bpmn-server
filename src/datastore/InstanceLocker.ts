@@ -1,4 +1,4 @@
-import  { DataStore }   from './';;
+import  { DataStore }   from './index.js';;
 
 
 const COLLECTION='wf_locks';

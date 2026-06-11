@@ -1,10 +1,10 @@
 
-import { Execution } from './Execution';
-import { Node, Behaviour_names, BPMN_TYPE } from '../elements/'
-import { NODE_ACTION , TOKEN_STATUS, ITEM_STATUS, NODE_SUBTYPE} from '../';
-import { Loop } from './Loop';
-import { Item } from './Item';
-import { IToken, IExecution } from '../interfaces/engine';
+import { Execution } from './Execution.js';
+import { Node, Behaviour_names, BPMN_TYPE } from '../elements/index.js'
+import { NODE_ACTION , TOKEN_STATUS, ITEM_STATUS, NODE_SUBTYPE} from '../index.js';
+import { Loop } from './Loop.js';
+import { Item } from './Item.js';
+import { IToken, IExecution } from '../interfaces/engine.js';
 
 /*
  *  Tokens:

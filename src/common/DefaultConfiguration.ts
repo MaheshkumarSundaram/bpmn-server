@@ -1,11 +1,14 @@
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
-import { ModelsDatastore } from '../datastore/ModelsDatastore';
-import { DefaultAppDelegate } from '../engine/DefaultAppDelegate';
+import { ModelsDatastore } from '../datastore/ModelsDatastore.js';
+import { DefaultAppDelegate } from '../engine/DefaultAppDelegate.js';
 
 import { IConfiguration, DataStore, NoCacheManager,ILogger, IModelsDatastore, 
 		IAppDelegate, IDataStore,
-		ScriptHandler} from '../';
-import { Logger } from './'
+		ScriptHandler} from '../index.js';
+import { Logger } from './index.js'
 import { Script } from 'vm';
 
 export class Configuration implements IConfiguration {

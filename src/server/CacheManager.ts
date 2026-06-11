@@ -1,5 +1,5 @@
-import { ServerComponent} from './ServerComponent';
-import { EXECUTION_EVENT, ICacheManager, IExecution } from '../interfaces';
+import { ServerComponent} from './ServerComponent.js';
+import { EXECUTION_EVENT, ICacheManager, IExecution } from '../interfaces/index.js';
 
 class NoCacheManager extends ServerComponent implements ICacheManager {
 

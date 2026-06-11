@@ -1,15 +1,15 @@
 
-import { Token, Execution, TOKEN_TYPE  } from '../../engine';
-import { Node } from '..';
-import { NODE_ACTION, FLOW_ACTION, EXECUTION_EVENT, TOKEN_STATUS, ITEM_STATUS } from '../../';
-import { Item ,ScriptHandler} from '../../engine';
-import { BPMNServer } from '../../server';
-import { Behaviour  } from './';
-import { Cron } from '../../server/Cron';
-import { NODE_SUBTYPE } from '../../interfaces';
+import { Token, Execution, TOKEN_TYPE  } from '../../engine/index.js';
+import { Node } from '../index.js';
+import { NODE_ACTION, FLOW_ACTION, EXECUTION_EVENT, TOKEN_STATUS, ITEM_STATUS } from '../../index.js';
+import { Item ,ScriptHandler} from '../../engine/index.js';
+import { BPMNServer } from '../../server/index.js';
+import { Behaviour  } from './index.js';
+import { Cron } from '../../server/Cron.js';
+import { NODE_SUBTYPE } from '../../interfaces/index.js';
 
-const dayjs = require('dayjs');
-var relativeTime = require('dayjs/plugin/relativeTime')
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime.js';
 dayjs.extend(relativeTime)
 
 

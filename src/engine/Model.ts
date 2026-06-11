@@ -1,6 +1,6 @@
-import { IItemData, IInstanceData} from  '../'
-import { ITEM_STATUS , EXECUTION_STATUS } from '../';
-import { BPMN_TYPE } from '../elements';
+import { IItemData, IInstanceData} from  '../index.js'
+import { ITEM_STATUS , EXECUTION_STATUS } from '../index.js';
+import { BPMN_TYPE } from '../elements/index.js';
 
 /**
  * as stored in MongoDB

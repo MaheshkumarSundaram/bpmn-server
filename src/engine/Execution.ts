@@ -1,12 +1,12 @@
 import { v4 as uuid } from '@lukeed/uuid';
-import { Item } from './Item';
-import { Token, TOKEN_TYPE  } from './Token';
-import { Loop} from './Loop';
-import { Definition, CallActivity, Process } from '../elements/'
-import { EXECUTION_EVENT, TOKEN_STATUS, EXECUTION_STATUS, IDefinition ,NODE_ACTION } from '../';
-import { IInstanceData, IExecution, DataHandler } from '../';
-import { ServerComponent } from '../server';
-import { InstanceObject } from './Model';
+import { Item } from './Item.js';
+import { Token, TOKEN_TYPE  } from './Token.js';
+import { Loop} from './Loop.js';
+import { Definition, CallActivity, Process } from '../elements/index.js'
+import { EXECUTION_EVENT, TOKEN_STATUS, EXECUTION_STATUS, IDefinition ,NODE_ACTION } from '../index.js';
+import { IInstanceData, IExecution, DataHandler } from '../index.js';
+import { ServerComponent } from '../server/index.js';
+import { InstanceObject } from './Model.js';
 
 /**
  *  is accessed two ways:
@@ -84,8 +84,8 @@ class Execution extends ServerComponent implements IExecution {
                 active++ 
         });
 
-        if (active == 0) {
-            this.end();
+        if (active == 0 && this.instance.status != EXECUTION_STATUS.end) {
+            await this.end();
         }
     }
     async end() {
@@ -180,6 +180,9 @@ class Execution extends ServerComponent implements IExecution {
 
         this.report();
         await Promise.all(this.promises);
+        // Deferred tokens (e.g. cross-pool message-flow delivery) settle in this.promises
+        // AFTER the checkEnd() above, so re-check completion before saving.
+        await this.checkEnd();
         await this.save();
 
     }

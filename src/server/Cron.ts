@@ -1,11 +1,12 @@
 
-import { Logger } from '../common/Logger';
+import { Logger } from '../common/Logger.js';
 
-import { ServerComponent } from './ServerComponent';
+import { ServerComponent } from './ServerComponent.js';
 
-import { IEventData, ICron } from '../';
+import { IEventData, ICron } from '../index.js';
 
-const duration = require('iso8601-duration');
+import * as duration from 'iso8601-duration';
+import { CronExpressionParser } from 'cron-parser';
 const parse = duration.parse;
 const end = duration.end;
 const toSeconds = duration.toSeconds;
@@ -133,7 +134,7 @@ class Cron  extends ServerComponent implements ICron {
 
 	static checkCron(expression,referenceDateTime) {
 
-		var parser = require('cron-parser');
+
 		const now = new Date().getTime();
 
 		try {
@@ -141,7 +142,7 @@ class Cron  extends ServerComponent implements ICron {
 				currentDate: referenceDateTime
 			};
 
-			const interval = parser.parseExpression(expression, options);
+			const interval = CronExpressionParser.parse(expression, options);
 			const next = interval.next();
 			const delay = (next.getTime()- now)/1000;
 			return delay;

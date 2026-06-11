@@ -1,9 +1,11 @@
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
 
-import { Definition } from "../elements";
-import { BPMNServer } from "../server";
-import {ModelsDatastoreDB} from "./ModelsDatastoreDB";
+import { Definition } from "../elements/index.js";
+import { BPMNServer } from "../server/index.js";
+import {ModelsDatastoreDB} from "./ModelsDatastoreDB.js";
 
-import { IModelsDatastore } from "../interfaces/";
+import { IModelsDatastore } from "../interfaces/index.js";
 
 
 class ModelsDatastore extends ModelsDatastoreDB implements IModelsDatastore {

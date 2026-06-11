@@ -1,13 +1,13 @@
-import { Node } from './Node';
+import { Node } from './Node.js';
 
-import { Token, TOKEN_TYPE } from '../engine/Token';
-import { BPMN_TYPE, ITEM_STATUS, NODE_ACTION, NODE_SUBTYPE } from '../interfaces/Enums'
+import { Token, TOKEN_TYPE } from '../engine/Token.js';
+import { BPMN_TYPE, ITEM_STATUS, NODE_ACTION, NODE_SUBTYPE } from '../interfaces/Enums.js'
 
-import { Process } from './Process';
-import { IExecution } from '../interfaces/engine';
-import { EXECUTION_STATUS } from '../interfaces/Enums';
-import { Item } from '../engine/Item';
-import { SubProcess } from '.';
+import { Process } from './Process.js';
+import { IExecution } from '../interfaces/engine.js';
+import { EXECUTION_STATUS } from '../interfaces/Enums.js';
+import { Item } from '../engine/Item.js';
+import { SubProcess } from './index.js';
 
 //NO_import { DecisionTable } from 'dmn-engine';
 

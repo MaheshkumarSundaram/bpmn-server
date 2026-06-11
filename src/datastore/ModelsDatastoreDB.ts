@@ -1,11 +1,14 @@
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+import { MongoDB } from './MongoDB.js';
 
-import { Definition } from "../elements";
-import { BPMNServer } from "../server";
+import { Definition } from "../elements/index.js";
+import { BPMNServer } from "../server/index.js";
 
-import { ServerComponent } from "../server/ServerComponent";
-import { IBpmnModelData, IModelsDatastore, IEventData } from "../interfaces/";
-import { BpmnModelData } from "./ModelsData";
-import { QueryTranslator } from "./QueryTranslator";
+import { ServerComponent } from "../server/ServerComponent.js";
+import { IBpmnModelData, IModelsDatastore, IEventData } from "../interfaces/index.js";
+import { BpmnModelData } from "./ModelsData.js";
+import { QueryTranslator } from "./QueryTranslator.js";
 
 const Definition_collection = 'wf_models';
 const Events_collection = 'wf_events';
@@ -18,7 +21,6 @@ class ModelsDatastoreDB extends ServerComponent implements IModelsDatastore {
         super(server);
 
         this.dbConfiguration = this.configuration.database.MongoDB;
-        const MongoDB = require('./MongoDB').MongoDB;
         this.db = new MongoDB(this.dbConfiguration, this.logger);
 
     }

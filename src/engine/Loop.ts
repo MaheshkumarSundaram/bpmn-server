@@ -1,9 +1,9 @@
-import { Token, TOKEN_TYPE } from './Token';
-import { Node, LoopBehaviour, Behaviour_names, BPMN_TYPE } from '../elements/';
+import { Token, TOKEN_TYPE } from './Token.js';
+import { Node, LoopBehaviour, Behaviour_names, BPMN_TYPE } from '../elements/index.js';
 
-import { Execution } from './Execution';
-import { ScriptHandler } from '.';
-import { ITEM_STATUS, TOKEN_STATUS } from '../interfaces';
+import { Execution } from './Execution.js';
+import { ScriptHandler } from './index.js';
+import { ITEM_STATUS, TOKEN_STATUS } from '../interfaces/index.js';
 
 class Loop {
     id;
