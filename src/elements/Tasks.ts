@@ -2,7 +2,7 @@
 import { Node } from './Node.js';
 
 import { Token, TOKEN_TYPE } from '../engine/Token.js';
-import { BPMN_TYPE, ITEM_STATUS, NODE_ACTION } from '../interfaces/Enums.js'
+import { BPMN_TYPE, ITEM_STATUS, NODE_ACTION, TOKEN_STATUS } from '../interfaces/Enums.js'
 
 import { Process } from './Process.js';
 import { IExecution } from '../interfaces/engine.js';
@@ -267,6 +267,11 @@ class SubProcess extends Node {
         await this.startBoundaryEvents(item, newToken);
         await newToken.execute(null);
 
+        // An interrupting boundary event fired during the synchronous child execution
+        // has terminated the child token; the subprocess must not take its outgoing
+        // sequence flow.
+        if (newToken.status === TOKEN_STATUS.terminated)
+            return NODE_ACTION.end;
         if (item.status == ITEM_STATUS.wait)
             return NODE_ACTION.wait;
         else
