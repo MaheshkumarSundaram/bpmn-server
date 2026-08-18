@@ -458,7 +458,6 @@ class Engine extends ServerComponent implements IEngine{
 		}
 		else {
 			this.logger.log('** engine.throwMessage failed to find a target for ',JSON.stringify(itemsQuery));
-			console.log('** engine.throwMessage failed to find a target for ', JSON.stringify(itemsQuery));
 
         }
 		return null;
@@ -506,11 +505,11 @@ class Engine extends ServerComponent implements IEngine{
 		itemsQuery["items.status"] = 'wait';
 
 		const items = await this.dataStore.findItems(itemsQuery);
-		console.log('throw signal itemsQuery:', itemsQuery,items.length);
+		this.logger.log('^Action:engine.throwSignal ' + signalId + ' targets:' + items.length);
 		if (items.length > 0) {
 			for (var i = 0; i < items.length; i++) {
 				let item = items[i];
-				console.log(`Throw Signal ${signalId} found target: ${item.processName} ${item.id}`);
+				this.logger.log(`..throwSignal ${signalId} found target: ${item.processName} ${item.id}`);
 			}
 
 			for (var i = 0; i < items.length; i++) {
@@ -549,9 +548,7 @@ class Engine extends ServerComponent implements IEngine{
 		let insts=await ds.findInstances(query,{"projection":{"id":1}});
 
 		let source=await this.server.definitions.getSource(model);
-		console.log(source);
-
-		console.log(insts);
+		this.logger.log(`^Action:engine.upgrade ${model} instances:${insts.length}`);
 		const resIds=[];
 		let self=this;
 		for(let i=0;i<insts.length;i++) {
