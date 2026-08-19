@@ -10,7 +10,8 @@ class DMNEngine {
     }
     async load(filePath: string) {
         this.table= await DMNParser.loadDMNFile(filePath);
-        console.log(filePath,'loaded');
+        if (this.options.debug==true)
+            console.log(filePath,'loaded');
         return this;
     }
 

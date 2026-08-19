@@ -131,16 +131,13 @@ class BusinessRuleTask extends ServiceTask {
             //throw new Error("Business Rule Task Not supported in this release.");
             
             businessRule = this.def.$attrs["camunda:decisionRef"];
-            console.log("invoking business rule:" + businessRule)
 
             const filePath=path+'/'+businessRule+'.dmn.xml';
-            console.log(' invoking ',filePath,' rules file')
-            const dmn=await new DMNEngine({debug:true}).load(filePath);
-            
+            token.log('..invoking business rule ' + businessRule + ' from ' + filePath);
+            const dmn=await new DMNEngine().load(filePath);
+
             item.output = await dmn.evaluate(item.input);
-            console.log("**** Business Rule input","item.input",item.input,"result:",item.output);
-            
-           
+            token.log('..business rule ' + businessRule + ' evaluated');
         }
         return NODE_ACTION.end;
     }
