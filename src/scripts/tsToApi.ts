@@ -37,7 +37,6 @@ startWorkflow(
 */
 
 import * as path from "path";
-import * as ts from "typescript";
 import * as fs from 'fs';
 const input={};
 function main(input) {
